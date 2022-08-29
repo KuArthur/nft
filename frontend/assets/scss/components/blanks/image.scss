@@ -1,0 +1,47 @@
+.image {
+    position: relative;
+
+    .ls-blur-up-img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        transition: 0.6s ease;
+        transition-property: opacity;
+        transition-delay: 0.6s;
+        opacity: 0;
+
+        &.ls-blur-up-loaded {
+            opacity: 1;
+        }
+    }
+
+    .ls-blur-up-is-loading {
+        opacity: 0;
+    }
+
+    &.lazyloaded {
+        .ls-original-loaded {
+            opacity: 0;
+        }
+    }
+
+    img {
+        width: 100%;
+        display: block;
+        transition: 0.6s ease;
+        transition-property: opacity;
+
+        &.lazyload {
+            opacity: 0;
+        }
+
+        &.lazyloaded {
+            opacity: 1;
+        }
+    }
+
+    picture {
+        display: block;
+    }
+}

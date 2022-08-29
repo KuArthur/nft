@@ -1,0 +1,84 @@
+.date-filter {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: rem-calc(48px);
+    box-shadow: rem-calc(0 3.5px 5.5px) rgba(0, 0, 0, 0.02);
+    border-radius: rem-calc(12px);
+    background: $medium-grey;
+    box-sizing: border-box;
+    padding: rem-calc(4px 9px);
+    position: relative;
+
+    &__label {
+        cursor: pointer;
+        position: relative;
+        width: rem-calc(40px);
+        height: rem-calc(40px);
+        border-radius: rem-calc(12px);
+        /*stylelint-disable*/
+        &:hover {
+            .date-filter__filter {
+                background: rgba(125, 139, 163, 0.1);
+                z-index: 2;
+            }
+        }
+    }
+
+    &__filter {
+        width: rem-calc(40px);
+        height: rem-calc(40px);
+        border-radius: rem-calc(12px);
+        -webkit-appearance: none;
+        background: $medium-grey;
+
+        &:checked {
+            background: $white !important;
+        }
+    }
+
+    &__text {
+        position: absolute;
+        left: 0;
+        bottom: rem-calc(10px);
+        width: rem-calc(40px);
+        font-size: rem-calc(17px);
+        line-height: rem-calc(19px);
+        font-weight: 700;
+        color: $extra-medium-grey;
+        text-align: center;
+    }
+
+    &__datepicker {
+        position: absolute;
+        width: rem-calc(40px);
+        left: 0;
+        bottom: 0;
+        font-size: rem-calc(24px);
+        padding-bottom: rem-calc(3px);
+        color: $extra-medium-grey;
+        z-index: 10;
+        text-align: center;
+    }
+
+    &__calendar {
+        position: absolute;
+        z-index: 5;
+        top: rem-calc(59px);
+    }
+
+    &__tooltip {
+        position: absolute;
+        top: rem-calc(50px);
+        left: rem-calc(-319px);
+        width: rem-calc(330px);
+    }
+}
+
+.table-menu {
+    .date-filter__calendar {
+        padding-right: 0;
+        padding-left: 0;
+        margin-left: rem-calc(-67px);
+    }
+}

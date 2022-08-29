@@ -1,0 +1,60 @@
+.login-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: rem-calc(452px);
+    height: rem-calc(520px);
+
+    &__title {
+        font-weight: 700;
+        font-size: rem-calc(18px);
+        line-height: 140%;
+        text-align: center;
+        color: $dark-grey;
+        margin-top: rem-calc(33px);
+        margin-bottom: rem-calc(26px);
+    }
+
+    &__wallets {
+        display: grid;
+        grid-template-columns: repeat(3, rem-calc(75px));
+        column-gap: rem-calc(15px);
+        margin-bottom: rem-calc(20px);
+    }
+
+    &__wallet {
+        width: rem-calc(75px);
+        height: rem-calc(75px);
+        border: rem-calc(1px) solid $light-grey;
+        box-sizing: border-box;
+        border-radius: rem-calc(15px);
+    }
+
+    &__text {
+        font-size: rem-calc(16px);
+        font-weight: bold;
+        line-height: 140%;
+        color: $grey;
+
+        &--or {
+            font-size: rem-calc(18px);
+        }
+
+        &--main {
+            width: 71%;
+            margin-top: rem-calc(27px);
+        }
+
+        &--about-key {
+            margin-top: rem-calc(44px);
+            width: 84%;
+        }
+    }
+
+    &__btn {
+        font-size: rem-calc(14px);
+        width: rem-calc(350px);
+        height: rem-calc(45px);
+        margin-top: rem-calc(28px);
+    }
+}

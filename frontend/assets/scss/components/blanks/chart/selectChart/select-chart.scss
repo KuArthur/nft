@@ -1,0 +1,92 @@
+.select-chart {
+    display: block;
+    position: relative;
+
+    &__selected {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        height: rem-calc(48px);
+        box-sizing: border-box;
+        filter: drop-shadow(rem-calc(0 3.5px 5.5px) rgba(0, 0, 0, 0.02));
+        border-radius: rem-calc(12px);
+        padding: rem-calc(0 8px);
+
+        &--green {
+            /*stylelint-disable*/
+            background: linear-gradient(
+                180deg,
+                rgba(79, 209, 197, 0.54) 0%,
+                rgba(79, 209, 197, 0) 100%
+            );
+            border: rem-calc(3px) solid $teal;
+        }
+
+        &--black {
+            background: linear-gradient(
+                180deg,
+                rgba(45, 55, 72, 0.36) 0%,
+                rgba(45, 55, 72, 0) 100%
+            );
+            border: rem-calc(3px) solid $dark-grey;
+        }
+
+        &-text {
+            font-size: rem-calc(17px);
+            line-height: rem-calc(25px);
+            color: $extra-medium-grey;
+            font-weight: 700;
+        }
+    }
+
+    &__icon {
+        font-size: rem-calc(10px);
+        padding-top: rem-calc(2px);
+        color: $extra-medium-grey;
+    }
+
+    &__list {
+        visibility: hidden;
+        opacity: 0;
+        width: 100%;
+        margin-top: rem-calc(3px);
+        position: absolute;
+        background: $white;
+        border: rem-calc(1px) solid $medium-grey;
+        box-sizing: border-box;
+        box-shadow: rem-calc(0 3.5px 5.5px) rgba(0, 0, 0, 0.04);
+        border-radius: rem-calc(8px);
+        list-style-type: none;
+        padding-left: rem-calc(6px);
+        padding-right: rem-calc(7px);
+        padding-bottom: rem-calc(3px);
+        z-index: 1;
+
+        &--visible {
+            visibility: visible;
+            opacity: 1;
+            transition: ease-out 0.2s;
+        }
+    }
+
+    &__item {
+        cursor: pointer;
+        box-sizing: border-box;
+        line-height: 150%;
+        font-size: rem-calc(17px);
+        color: $extra-medium-grey;
+        font-weight: 700;
+        padding: rem-calc(2px 0);
+        padding-left: rem-calc(3px);
+
+        &:hover {
+            background: rgba(160, 174, 192, 0.1);
+            border-radius: rem-calc(3px);
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

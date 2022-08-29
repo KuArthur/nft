@@ -1,0 +1,17 @@
+.filter-item {
+    width: rem-calc(270px);
+    height: rem-calc(60px);
+    background: $white;
+    border: rem-calc(1px) solid #eff2f5;
+    box-sizing: border-box;
+    box-shadow: rem-calc(0 3.5px 5.5px) rgba(0, 0, 0, 0.02);
+    border-radius: rem-calc(8px);
+    padding: rem-calc(17px 18px);
+
+    &__text {
+        font-size: rem-calc(18px);
+        line-height: rem-calc(25px);
+        color: $dark-grey;
+        font-weight: 700;
+    }
+}

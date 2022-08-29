@@ -1,0 +1,106 @@
+.header {
+    display: flex;
+    align-items: flex-end;
+    width: rem-calc(1841px);
+    height: rem-calc(159px);
+    border-radius: rem-calc(15px);
+    background: url(/images/default-layout/header-bg.png) no-repeat center;
+    background-size: contain;
+    box-sizing: border-box;
+    padding: rem-calc(10px 0);
+    padding-right: rem-calc(21px);
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        margin-right: rem-calc(37px);
+
+        &-img {
+            width: rem-calc(140px);
+            height: rem-calc(140px);
+        }
+
+        &-text {
+            width: rem-calc(228px);
+            height: rem-calc(94px);
+            margin-left: rem-calc(-4px);
+        }
+    }
+
+    &__nav {
+        display: grid;
+        grid-template-columns: repeat(4, rem-calc(186px));
+        grid-column-gap: rem-calc(10px);
+        margin-bottom: rem-calc(22px);
+
+        &-link {
+            text-decoration: none;
+        }
+    }
+
+    &__social {
+        display: flex;
+        margin-bottom: rem-calc(28px);
+        width: rem-calc(353px);
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: rem-calc(1px);
+
+        &-link {
+            text-decoration: none;
+        }
+    }
+
+    &__icon {
+        text-align: center;
+        font-size: rem-calc(30px);
+        cursor: pointer;
+
+        &:hover {
+            filter: drop-shadow(rem-calc(1px 2px 4px) rgba(255, 255, 255, 1));
+        }
+
+        &--twitter {
+            color: #3cadb7;
+        }
+
+        &--mail {
+            color: #f7d11e;
+        }
+
+        &--discord {
+            color: #f65843;
+        }
+
+        &--premium {
+            color: $white;
+        }
+
+        &--profile,
+        &--help {
+            display: flex;
+            width: rem-calc(31px);
+            height: rem-calc(30px);
+        }
+
+        &--profile {
+            background: url(/images/icons/profile.svg) no-repeat center;
+            background-size: contain;
+        }
+
+        &--help {
+            background: url(/images/icons/help.svg) no-repeat center;
+            background-size: contain;
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__tooltip {
+        position: absolute;
+        left: rem-calc(-518px);
+        top: rem-calc(25px);
+    }
+}

@@ -1,0 +1,101 @@
+.wallet-table {
+    width: rem-calc(1841px);
+    margin: 0 auto;
+    background: $white;
+    border-radius: rem-calc(15px);
+    box-shadow: rem-calc(0 3.5px 5.5px) rgba(0, 0, 0, 0.02);
+    box-sizing: border-box;
+    padding: rem-calc(0 17px);
+    padding-bottom: rem-calc(35px);
+
+    &__menu {
+        padding-bottom: rem-calc(1px);
+    }
+
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    &__cell {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        font-size: rem-calc(16px);
+        line-height: rem-calc(22px);
+        font-weight: 700;
+    }
+
+    &__header {
+        &-item {
+            cursor: pointer;
+            border-bottom: rem-calc(1px) solid $light-grey;
+            width: rem-calc(185px);
+            color: $grey;
+            text-align: left;
+            height: rem-calc(45px);
+            box-sizing: border-box;
+
+            &--arrow {
+                width: rem-calc(65px);
+            }
+
+            &--collection {
+                width: rem-calc(357px);
+            }
+
+            // &--number {
+            //     width: rem-calc(68px);
+            // }
+
+            // &--name {
+            //     width: rem-calc(285px);
+            // }
+
+            // &--opensea {
+            //     width: rem-calc(28px);
+            // }
+
+            // &--graph {
+            //     width: rem-calc(100px);
+            // }
+
+            // &--volume {
+            //     width: rem-calc(191px);
+            // }
+
+            // &--volume-change {
+            //     width: rem-calc(193px);
+            // }
+
+            // &--floor {
+            //     width: rem-calc(188px);
+
+            //     &-change {
+            //         width: rem-calc(188px);
+            //     }
+            // }
+        }
+
+        &-text {
+            font-size: rem-calc(16px);
+            line-height: rem-calc(24px);
+            text-transform: uppercase;
+
+            &--number {
+                font-size: rem-calc(25px);
+            }
+        }
+
+        &-sort-icon {
+            font-size: rem-calc(8px);
+            line-height: rem-calc(22px);
+            vertical-align: top;
+            display: none;
+
+            &--enabled {
+                display: inline-block;
+            }
+        }
+    }
+}

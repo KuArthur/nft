@@ -1,0 +1,98 @@
+.loader {
+    &__inner {
+        background: #005391;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        transition: 0.5s;
+    }
+
+    &.active .loader__inner {
+        opacity: 0;
+    }
+
+    &__wrap {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__picture {
+        margin: 0 auto rem-calc(13px);
+        position: relative;
+        width: rem-calc(187px);
+    }
+
+    &__img {
+        width: 100%;
+        display: block;
+    }
+
+    &__glowing {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+
+        &:not(&--delay) {
+            animation: glowing 3s infinite;
+        }
+
+        &--delay {
+            animation: glowing-in 3s infinite;
+        }
+    }
+
+    &__text {
+        font-style: normal;
+        font-weight: 500;
+        text-align: center;
+        color: #fff;
+        line-height: 140%;
+        font-size: rem-calc(12px);
+        margin-bottom: rem-calc(37px);
+    }
+
+    &__hide {
+        visibility: hidden;
+        z-index: -999;
+        position: absolute;
+        left: -999px;
+    }
+}
+
+@keyframes glowing {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes glowing-in {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

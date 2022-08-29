@@ -1,0 +1,17 @@
+.table-menu-filter {
+    cursor: pointer;
+    border-radius: rem-calc(8px);
+    height: rem-calc(34px);
+    background: $medium-grey;
+    font-size: rem-calc(13px);
+    font-weight: 700;
+    line-height: rem-calc(35px);
+    text-align: center;
+    color: $dark-grey;
+    border: rem-calc(1px) solid $white;
+    box-sizing: border-box;
+
+    &--checked {
+        border: rem-calc(1px) solid $dark-grey;
+    }
+}

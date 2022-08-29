@@ -1,0 +1,104 @@
+.card {
+    display: flex;
+    justify-content: space-between;
+    width: rem-calc(382px);
+    height: rem-calc(80px);
+    box-shadow: rem-calc(0 3.5px 5.5px) rgba(0, 0, 0, 0.02);
+    border-radius: 15px;
+    background: $white;
+    box-sizing: border-box;
+    padding: rem-calc(18px 18px 18px 21px);
+
+    &__data {
+        text-align: left;
+    }
+
+    &__title {
+        font-size: rem-calc(12px);
+        line-height: rem-calc(18px);
+        font-weight: 700;
+        color: $grey;
+    }
+
+    &__currency {
+        display: flex;
+        align-items: flex-end;
+        margin-top: rem-calc(2px);
+    }
+
+    &__price {
+        font-size: rem-calc(18px);
+        line-height: rem-calc(22px);
+        font-weight: 700;
+        color: $dark-grey;
+        margin-right: rem-calc(10px);
+
+        &-wrapper {
+            display: flex;
+        }
+    }
+
+    &__changing {
+        display: flex;
+        margin-left: rem-calc(5px);
+
+        &-value {
+            font-size: rem-calc(14px);
+            line-height: rem-calc(21px);
+            font-weight: 700;
+            margin-right: rem-calc(6px);
+
+            &--up {
+                color: $green;
+            }
+
+            &--down {
+                color: $red;
+            }
+        }
+
+        &-icon {
+            display: flex;
+            font-size: rem-calc(15px);
+            padding-top: rem-calc(2px);
+
+            &--up {
+                color: $green;
+            }
+
+            &--down {
+                color: $red;
+            }
+        }
+    }
+
+    &__icon {
+        color: $white;
+        font-size: rem-calc(24px);
+        // line-height: 0;
+        padding-top: rem-calc(6px);
+
+        &--gas {
+            font-size: rem-calc(19px);
+            padding-top: rem-calc(5px);
+            padding-left: rem-calc(1px);
+        }
+
+        &-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: rem-calc(45px);
+            height: rem-calc(45px);
+            box-shadow: rem-calc(0 3.5px 5.5px) rgba(0, 0, 0, 0.02);
+            border-radius: rem-calc(12px);
+            background: $teal;
+        }
+
+        &-price {
+            font-size: rem-calc(15px);
+            margin-right: rem-calc(5px);
+            padding-top: rem-calc(3px);
+        }
+    }
+}

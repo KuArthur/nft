@@ -1,0 +1,100 @@
+.help-modal {
+    position: relative;
+    width: rem-calc(1159px);
+    height: rem-calc(889px);
+    display: flex;
+    flex-direction: column;
+    padding: rem-calc(0 42px);
+    box-sizing: border-box;
+    overflow-y: scroll;
+    border-right: rem-calc(11px) solid $white;
+
+    &::-webkit-scrollbar {
+        width: rem-calc(14px);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border: rem-calc(3.5px) solid transparent;
+        border-radius: rem-calc(20px);
+        background-color: rgba(160, 174, 192, 0.5);
+        background-clip: content-box;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(160, 174, 192, 0.1);
+        margin-top: rem-calc(40px);
+        margin-bottom: rem-calc(20px);
+    }
+
+    &__content {
+        text-align: left;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: rem-calc(18px);
+        line-height: 140%;
+        color: $dark-grey;
+
+        &--main {
+            text-align: center;
+            margin-top: rem-calc(33px);
+            margin-bottom: rem-calc(40px);
+        }
+
+        &--about {
+            margin-bottom: rem-calc(30px);
+        }
+
+        &--roadmap {
+            margin-top: rem-calc(40px);
+        }
+    }
+
+    &__text {
+        font-size: rem-calc(16px);
+        font-weight: 700;
+        line-height: 140%;
+        color: $grey;
+
+        &--about {
+            width: 90%;
+
+            &--bottom {
+                margin-top: rem-calc(44px);
+                margin-bottom: rem-calc(45px);
+            }
+        }
+    }
+
+    &__list {
+        margin-left: rem-calc(23px);
+        margin-top: rem-calc(30px);
+    }
+
+    &__item {
+        list-style-type: none;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            width: rem-calc(4px);
+            height: rem-calc(4px);
+            left: rem-calc(-14px);
+            top: rem-calc(8px);
+            border-radius: 50%;
+            background: $grey;
+        }
+
+        &--plus {
+            list-style-type: none;
+            margin-left: rem-calc(-2px);
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+}

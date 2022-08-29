@@ -1,0 +1,12 @@
+.wallet-item {
+    cursor: pointer;
+    width: rem-calc(60px);
+    height: rem-calc(60px);
+    border-radius: 50%;
+    border: 3px solid $light-grey;
+    box-sizing: border-box;
+
+    &:active {
+        box-shadow: rem-calc(0 0 11px 5px) rgba(79, 209, 197, 0.2);
+    }
+}

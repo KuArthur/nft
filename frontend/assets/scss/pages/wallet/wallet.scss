@@ -1,0 +1,17 @@
+.wallet {
+    margin-top: rem-calc(43px);
+
+    &__wrapper {
+        margin-top: rem-calc(39px);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__table {
+        margin-top: rem-calc(80px);
+    }
+
+    // &__chart {
+
+    // }
+}

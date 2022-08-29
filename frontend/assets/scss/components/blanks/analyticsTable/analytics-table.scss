@@ -1,0 +1,49 @@
+.analytics-table {
+    width: 100%;
+    background: $white;
+    padding: rem-calc(0 34px);
+    padding-bottom: rem-calc(35px);
+    border-collapse: collapse;
+
+    &__cell {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        font-size: rem-calc(16px);
+        line-height: rem-calc(22px);
+        font-weight: 700;
+    }
+
+    &__header {
+        &-item {
+            height: rem-calc(58px);
+            cursor: pointer;
+            border-bottom: rem-calc(1px) solid $light-grey;
+            width: rem-calc(167px);
+            color: $grey;
+            text-align: center;
+
+            &--month {
+                text-align: left;
+                width: rem-calc(70px);
+            }
+        }
+
+        &-text {
+            font-size: rem-calc(16px);
+            line-height: rem-calc(24px);
+            text-transform: uppercase;
+        }
+
+        &-sort-icon {
+            font-size: rem-calc(8px);
+            line-height: rem-calc(22px);
+            vertical-align: top;
+            display: none;
+
+            &--enabled {
+                display: inline-block;
+            }
+        }
+    }
+}

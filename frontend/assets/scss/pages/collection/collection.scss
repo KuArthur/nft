@@ -1,0 +1,23 @@
+.collection {
+    &__top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__info {
+        &-filter {
+            margin-top: rem-calc(14px);
+        }
+    }
+
+    &__bottom {
+        width: rem-calc(1841px);
+        background: $white;
+        padding: rem-calc(0 28px);
+        box-sizing: border-box;
+        margin: 0 auto;
+        margin-top: rem-calc(47px);
+        border-radius: rem-calc(15px);
+        box-shadow: rem-calc(0 3.5px 5.5px) rgba(0, 0, 0, 0.02);
+    }
+}

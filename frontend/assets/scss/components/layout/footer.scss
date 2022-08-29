@@ -1,0 +1,11 @@
+.footer {
+    height: rem-calc(73px);
+    display: flex;
+    align-items: center;
+
+    &__copyright {
+        font-size: rem-calc(12px);
+        line-height: rem-calc(18px);
+        color: $grey;
+    }
+}

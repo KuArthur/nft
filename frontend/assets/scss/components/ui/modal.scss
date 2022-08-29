@@ -1,0 +1,49 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 0.2s ease;
+    right: 0;
+    z-index: 998;
+    background: rgba(79, 209, 197, 0.4);
+    backdrop-filter: blur(rem-calc(6px));
+    -webkit-backdrop-filter: blur(rem-calc(6px));
+    padding-top: rem-calc(116px);
+
+    &__content {
+        position: relative;
+        background-color: $white;
+        box-shadow: rem-calc(0 7px 23px) rgba(0, 0, 0, 0.05);
+        border-radius: rem-calc(15px);
+        transition: all 0.2s ease;
+        z-index: 999;
+        overflow: hidden;
+    }
+
+    &__icon {
+        cursor: pointer;
+        position: absolute;
+        color: $dark-grey;
+        right: rem-calc(30px);
+        top: rem-calc(18px);
+        font-size: rem-calc(13px);
+        z-index: 999;
+    }
+}
+
+.modal-enter {
+    opacity: 0;
+}
+
+.modal-leave-active {
+    opacity: 0;
+}
+
+.modal-enter .modal-content,
+.modal-leave-active .modal-content {
+    transform: scale(1.2);
+}

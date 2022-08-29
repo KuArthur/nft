@@ -1,0 +1,65 @@
+$light-grey: #e2e8f0;
+$mediumlight-grey: #cbd5e0;
+$medium-grey: #eff2f5;
+$extra-medium-grey: #606c81;
+$grey: #a0aec0;
+$grey-color: #e5e5e5;
+$dark-grey: #2d3748;
+$white: #fff;
+$black: #000;
+$green: #48bb78;
+$teal: #4fd1c5;
+$red: #e53e3e;
+$orange: #f65843;
+$yellow: #f7d11e;
+$blue: #2081e2;
+
+$base-font-size: 16px;
+
+$body-font-family: Helvetica, sans-serif;
+
+$breakpoints: (
+    mobile: 0,
+    tablet: 640px,
+    desktop: 1200px,
+) !default;
+
+$breakpoint-classes: (mobile, tablet, desktop) !default;
+
+$print-breakpoint: desktop !default;
+
+// these breakpoints used in scaling calculations
+// and should be adjusted to the design layout
+
+$scalable-breakpoints: (
+    (
+        start: 0,
+        stop: 320px,
+        design-size: 320px,
+        scale: true,
+    ),
+    (
+        start: 320px,
+        stop: 640px,
+        design-size: 320px,
+        scale: false,
+    ),
+    (
+        start: 640px,
+        stop: 1200px,
+        design-size: 992px,
+        scale: true,
+    ),
+    (
+        start: 1200px,
+        stop: 1920px,
+        design-size: 1920px,
+        scale: true,
+    ),
+    (
+        start: 1920px,
+        stop: null,
+        design-size: 1920px,
+        scale: true,
+    )
+);

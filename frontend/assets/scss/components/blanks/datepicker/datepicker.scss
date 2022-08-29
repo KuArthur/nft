@@ -1,0 +1,167 @@
+.datepicker {
+    background: $white;
+    box-shadow: rem-calc(0 7px 23px) rgba(0, 0, 0, 0.05);
+    border-radius: rem-calc(15px);
+    box-sizing: border-box;
+    padding: rem-calc(0 12px);
+    padding-top: rem-calc(21px);
+
+    &__top {
+        display: flex;
+    }
+
+    &__predefined-dates {
+        display: flex;
+        flex-direction: column;
+        width: rem-calc(190px);
+        border-left: rem-calc(1px) solid #d9d9d9;
+        padding-left: rem-calc(23px);
+        box-sizing: border-box;
+
+        &-title {
+            font-size: rem-calc(13px);
+            line-height: rem-calc(15px);
+            color: $grey;
+            text-align: left;
+        }
+
+        &-date {
+            -webkit-appearance: none;
+            width: rem-calc(104px);
+            height: rem-calc(28px);
+            border-radius: rem-calc(8px);
+
+            &:checked {
+                background: rgba(160, 174, 192, 0.2);
+                box-shadow: rem-calc(0 3.5px 5.5px) rgba(0, 0, 0, 0.02);
+            }
+        }
+
+        &-label {
+            cursor: pointer;
+            display: flex;
+            height: rem-calc(28px);
+            position: relative;
+        }
+
+        &-text {
+            position: absolute;
+            font-size: rem-calc(14px);
+            line-height: rem-calc(16px);
+            color: $dark-grey;
+            left: rem-calc(9px);
+            top: rem-calc(6px);
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: rem-calc(67px);
+        border-top: rem-calc(1px) solid #d9d9d9;
+        box-sizing: border-box;
+        margin-top: rem-calc(11px);
+        padding-left: rem-calc(38px);
+        padding-right: rem-calc(23px);
+
+        &-right {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__cancel,
+    &__continue {
+        cursor: pointer;
+        border: none;
+        background: $white;
+        font-size: rem-calc(14px);
+        line-height: rem-calc(16px);
+    }
+
+    &__cancel {
+        cursor: pointer;
+        color: $dark-grey;
+    }
+
+    &__selected {
+        font-size: rem-calc(13px);
+        line-height: rem-calc(15px);
+        color: $dark-grey;
+
+        &-date {
+            color: $grey;
+        }
+    }
+
+    &__continue {
+        background: $teal;
+        width: rem-calc(84px);
+        height: rem-calc(32px);
+        box-shadow: rem-calc(0 3.5px 5.5px) rgba(0, 0, 0, 0.02);
+        border-radius: rem-calc(8px);
+        color: $white;
+        margin-left: rem-calc(8px);
+
+        &--disable {
+            pointer-events: none;
+            opacity: 0.3;
+        }
+    }
+}
+
+.vc {
+    &-highlights {
+        opacity: 1 !important;
+    }
+
+    &-container {
+        border: none;
+
+        --blue-200: rgba(160, 174, 192, 0.2);
+        --blue-600: #4fd1c5;
+        --blue-700: #4fd1c5;
+    }
+
+    &-title {
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: normal !important;
+        font-size: rem-calc(14px) !important;
+        line-height: rem-calc(28px) !important;
+        color: $dark-grey;
+    }
+
+    &-weekday {
+        font-weight: normal !important;
+        font-size: rem-calc(12px) !important;
+        line-height: rem-calc(14px) !important;
+        text-transform: uppercase;
+    }
+
+    &-day {
+        &.is-not-in-month * {
+            opacity: 1 !important;
+            pointer-events: all !important;
+            color: #939699;
+        }
+
+        &-content {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: rem-calc(14px) !important;
+            line-height: rem-calc(16px) !important;
+        }
+    }
+
+    &-arrow {
+        color: $black;
+    }
+}
+
+// .table-menu {
+//     .datepicker {
+//         padding-right: 0;
+//         padding-left: 0;
+//     }
+// }

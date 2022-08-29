@@ -1,0 +1,93 @@
+.table-menu-item {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    height: rem-calc(34px);
+    background: $medium-grey;
+    border: rem-calc(1px) solid transparent;
+    box-sizing: border-box;
+    padding-top: rem-calc(9px);
+    padding-left: rem-calc(8px);
+    border-radius: rem-calc(8px);
+    flex-shrink: 0;
+
+    &--enabled {
+        border: rem-calc(1px) solid $dark-grey;
+        box-sizing: border-box;
+    }
+
+    &--filter {
+        padding-top: rem-calc(7px);
+        padding-left: rem-calc(8px);
+        /*stylelint-disable*/
+        .table-menu-item__text {
+            line-height: rem-calc(22px);
+        }
+    }
+
+    &__icon {
+        margin-right: rem-calc(7px);
+        font-size: rem-calc(16px);
+        color: $grey;
+
+        &--star {
+            font-size: rem-calc(20px);
+            margin-top: rem-calc(-2px);
+            margin-right: rem-calc(3px);
+
+            &--enabled {
+                color: $dark-grey;
+            }
+
+            &-fullcolor {
+                margin-top: rem-calc(-2px);
+                margin-right: rem-calc(4px);
+                margin-left: rem-calc(2px);
+                font-size: rem-calc(16px);
+                line-height: rem-calc(27px);
+                color: $dark-grey;
+            }
+        }
+
+        &--filter {
+            font-size: rem-calc(15px);
+            margin-top: rem-calc(1px);
+            margin-left: rem-calc(1px);
+            margin-right: rem-calc(6px);
+
+            &--enabled {
+                color: $dark-grey;
+            }
+        }
+    }
+
+    &__img {
+        width: rem-calc(20px);
+        height: rem-calc(20px);
+        box-sizing: border-box;
+        border: rem-calc(1px) solid $light-grey;
+        border-radius: 50%;
+        margin-right: rem-calc(3px);
+        background: $white;
+    }
+
+    &__text {
+        font-size: rem-calc(13px);
+        font-weight: 700;
+        line-height: rem-calc(18px);
+        color: $dark-grey;
+        white-space: nowrap;
+    }
+
+    &__tooltip {
+        position: absolute;
+        top: rem-calc(54px);
+        left: rem-calc(-244px);
+        width: rem-calc(330px);
+
+        &--button {
+            left: 0;
+        }
+    }
+}

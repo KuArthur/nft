@@ -1,0 +1,89 @@
+@mixin placeholder-color ($color) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+
+    // WebKit browsers
+    &::-moz-placeholder {
+        color: $color;
+        opacity: 1;
+    }
+
+    // Mozilla Firefox 19+
+    &:-moz-placeholder {
+        color: $color;
+        opacity: 1;
+    }
+
+    // Mozilla Firefox 4 to 18
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+
+    // Internet Explorer 10+
+}
+
+@mixin text-selection-color ($bg-color, $color) {
+    & ::selection {
+        background: $bg-color;
+        color: $color;
+    }
+
+    // WebKit/Blink Browsers
+    & ::-moz-selection {
+        background: $bg-color;
+        color: $color;
+    }
+
+    // Gecko Browsers
+}
+
+@mixin un-selectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@mixin resizable-logic($scalable-breakpoints: $scalable-breakpoints) {
+    @each $scalable-breakpoint in $scalable-breakpoints {
+        $start: map-get($scalable-breakpoint, 'start');
+        $stop: map-get($scalable-breakpoint, 'stop');
+        $design-size: map-get($scalable-breakpoint, 'design-size');
+        $scale: map-get($scalable-breakpoint, 'scale');
+
+        $str: '';
+
+        @if $start !=0 {
+            $str: $str+'(min-width: #{em-calc($start)})';
+        }
+
+        @if $stop !=null {
+            $str: $str+' and (max-width: #{em-calc($stop - 1)})';
+        }
+
+        @if $start==0 {
+            @if $scale {
+                font-size: scalable-font-size-calc($design-size);
+            }
+
+            @else {
+                font-size: 16px;
+            }
+        }
+
+        @else {
+            @media #{$str} {
+                @if $scale==true {
+                    font-size: scalable-font-size-calc($design-size);
+                }
+
+                @else {
+                    font-size: not-scalable-font-size-calc($start, $design-size);
+                }
+            }
+        }
+    }
+}

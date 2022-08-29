@@ -1,0 +1,99 @@
+.wallet-chart {
+    width: rem-calc(1217px);
+    height: rem-calc(532px);
+    background: $white;
+    border: 1px solid $medium-grey;
+    box-sizing: border-box;
+    box-shadow: rem-calc(0 3.5px 5.5px) rgba(0, 0, 0, 0.02);
+    border-radius: rem-calc(15px);
+    padding-top: rem-calc(20px);
+
+    &__chart {
+        width: rem-calc(988.6px);
+        height: rem-calc(365.6px);
+        padding-left: rem-calc(12px);
+    }
+
+    &__menu {
+        padding-left: rem-calc(75px);
+        padding-right: rem-calc(28px);
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: rem-calc(44px);
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__datefilter {
+        width: rem-calc(400px);
+    }
+
+    &__btns {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: rem-calc(140px);
+        margin-top: rem-calc(22px);
+        margin-right: rem-calc(-2px);
+    }
+
+    &__btn {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: rem-calc(117px);
+        height: rem-calc(45px);
+        border-radius: rem-calc(12px 0 0 12px);
+        color: $white;
+        padding-left: rem-calc(20px);
+        padding-right: rem-calc(10px);
+        box-sizing: border-box;
+        transition: 0.3s ease-in-out;
+        margin-bottom: rem-calc(40px);
+        font-weight: 700;
+        font-size: rem-calc(14px);
+        line-height: 150%;
+
+        &:first-child {
+            margin-bottom: rem-calc(49px);
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            width: rem-calc(140px);
+            height: rem-calc(54px);
+            margin-bottom: rem-calc(31px);
+            padding-left: rem-calc(24px);
+            transition: 0.3s ease-in-out;
+            box-shadow: rem-calc(-2px 0 10px 0) rgba(34, 60, 80, 0.33);
+            font-size: rem-calc(18px);
+
+            &:first-child {
+                margin-bottom: rem-calc(40px);
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &--green {
+            background: $teal;
+        }
+
+        &--orange {
+            background: $orange;
+        }
+
+        &--yellow {
+            background: $yellow;
+        }
+    }
+}

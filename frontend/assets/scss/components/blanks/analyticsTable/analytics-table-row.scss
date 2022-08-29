@@ -1,0 +1,97 @@
+.analytics-table {
+    &__row {
+        height: rem-calc(58px);
+    }
+
+    &__item {
+        border-bottom: rem-calc(1px) solid $light-grey;
+        color: $black;
+        font-size: rem-calc(16px);
+        line-height: 1.37;
+        font-weight: 700;
+        text-align: center;
+        padding-top: rem-calc(16px);
+        padding-bottom: rem-calc(12px);
+        box-sizing: border-box;
+
+        &--month {
+            text-align: left;
+        }
+
+        &--with-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &--up,
+        &--down {
+            line-height: 1.3125;
+
+            // line-height: 1;
+        }
+
+        &--up {
+            color: $green;
+        }
+
+        &--down {
+            color: $red;
+        }
+    }
+
+    &__collection {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        &-name {
+            text-decoration: none;
+            color: $dark-grey;
+        }
+
+        &-img {
+            border-radius: 50%;
+            margin-right: rem-calc(16px);
+        }
+    }
+
+    &__icon {
+        display: flex;
+        width: rem-calc(30px);
+        height: rem-calc(30px);
+
+        &--star {
+            cursor: pointer;
+            font-size: rem-calc(29px);
+            color: $grey;
+        }
+
+        &--graph {
+            cursor: pointer;
+            font-size: rem-calc(30px);
+        }
+
+        &--ethereum {
+            width: rem-calc(20px);
+            height: rem-calc(20px);
+            font-size: rem-calc(20px);
+        }
+
+        &--up,
+        &--down {
+            width: rem-calc(20px);
+            height: rem-calc(20px);
+            margin-left: rem-calc(2px);
+            font-size: rem-calc(16px);
+        }
+
+        &--up {
+            color: $green;
+        }
+
+        &--down {
+            color: $red;
+        }
+    }
+}

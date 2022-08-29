@@ -1,0 +1,37 @@
+.tooltip {
+    width: 100%;
+    position: absolute;
+    height: rem-calc(90px);
+    box-sizing: border-box;
+    backdrop-filter: blur(rem-calc(21px));
+    -webkit-backdrop-filter: blur(rem-calc(21px));
+    padding-top: rem-calc(12px);
+    padding-left: rem-calc(10px);
+    transition: ease-out 1s;
+
+    /* stylelint-disable */
+    background: linear-gradient(
+        112.83deg,
+        #f8f9fa 0%,
+        rgba(255, 255, 255, 0.8) 110.84%
+    );
+    /* stylelint-enable */
+    border: rem-calc(1.5px) solid $white;
+    border-radius: rem-calc(15px);
+    box-shadow: rem-calc(0 7px 23px) rgba(0, 0, 0, 0.05);
+
+    &__text {
+        width: 100%;
+        font-weight: 700;
+        font-size: rem-calc(16px);
+        line-height: 140%;
+        text-align: left;
+    }
+
+    &__icon {
+        position: absolute;
+        right: rem-calc(21px);
+        top: rem-calc(7px);
+        font-size: rem-calc(12px);
+    }
+}

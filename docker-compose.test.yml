@@ -1,0 +1,96 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+    # nest container
+    nest:
+        build:
+            context: ./
+            dockerfile: docker/nest/Dockerfile
+        networks:
+            - app-network
+        restart: always
+
+    # PostgreSQL database
+    postgres:
+        build:
+            context: docker/postgres
+            dockerfile: Dockerfile
+        volumes:
+            # Database volume
+            - database:/var/lib/postgresql/data
+        environment:
+            - LC_ALL=C.UTF-8
+            - POSTGRES_DB=app
+            - POSTGRES_USER=app
+            - POSTGRES_PASSWORD=app
+        networks:
+            - app-network
+        restart: always
+
+    # pgadmin service
+    pgadmin:
+        build:
+            context: docker/pgadmin
+            dockerfile: Dockerfile
+        environment:
+            - PGADMIN_DEFAULT_EMAIL=admin@prestoheads.com
+            - PGADMIN_DEFAULT_PASSWORD=app
+            - PGADMIN_CONFIG_SERVER_MODE=False
+        volumes:
+            - ./docker/pgadmin/data:/var/lib/pgadmin/data
+        ports:
+            - "${PGADMIN_PORT}:80"
+        networks:
+            - app-network
+        restart: always
+
+    # Redis
+    redis:
+        build:
+            context: docker/redis
+            dockerfile: Dockerfile
+        command: ["redis-server", "/usr/local/etc/redis/redis.conf", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD}"]
+        volumes:
+            - redis:/data
+            - ./docker/redis/logs:/var/log
+        networks:
+            - app-network
+        restart: always
+
+
+    # Node container
+    node:
+        restart: always
+        build:
+            context: ./
+            dockerfile: docker/node/Dockerfile
+        networks:
+            - app-network
+
+    nginx:
+        build:
+            context: ./
+            dockerfile: docker/nginx/prod/Dockerfile
+        volumes:
+            - ./:/var/www
+            - ./docker/nginx/prod/conf.d/:/etc/nginx/conf.d/
+            - ./docker/nginx/prod/logs:/var/log/nginx
+        ports:
+            # Nuxt port
+            - ${APP_PORT}:80
+        links:
+            - node
+            - nest
+        networks:
+            - app-network
+
+networks:
+    app-network:
+        driver: bridge
+
+volumes:
+    database:
+        driver: local
+    redis:
+        driver: local

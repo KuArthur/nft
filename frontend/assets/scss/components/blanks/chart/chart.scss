@@ -1,0 +1,148 @@
+.chart {
+    width: rem-calc(1246px);
+    height: rem-calc(532px);
+    background: $white;
+    box-sizing: border-box;
+    padding-bottom: rem-calc(32px);
+
+    &__menu {
+        display: flex;
+        margin-bottom: rem-calc(50px);
+        padding-left: rem-calc(35px);
+        padding-right: rem-calc(43px);
+        padding-top: rem-calc(19px);
+    }
+
+    &__currency-filter {
+        margin-right: rem-calc(54px);
+    }
+
+    &__select {
+        display: flex;
+        align-items: center;
+        margin-right: rem-calc(55px);
+
+        &-wrapper {
+            width: rem-calc(180px);
+        }
+
+        &-number {
+            font-size: rem-calc(17px);
+            line-height: rem-calc(25px);
+            color: $extra-medium-grey;
+            font-weight: 700;
+            margin-right: rem-calc(10px);
+        }
+    }
+
+    &__date-filter {
+        width: rem-calc(446px);
+        margin-left: rem-calc(21px);
+    }
+
+    &__chart {
+        position: relative;
+        width: 100%;
+        height: rem-calc(338px);
+        margin: 0 auto;
+    }
+
+    &__logo {
+        position: absolute;
+        background: url(/images/logo-table.svg) no-repeat center;
+        background-size: contain;
+        width: rem-calc(113px);
+        height: rem-calc(30px);
+        bottom: rem-calc(38px);
+        left: rem-calc(80px);
+        z-index: 5;
+    }
+
+    &__tooltip {
+        width: rem-calc(203px);
+        height: rem-calc(87px);
+        border: none;
+        border-radius: rem-calc(8px);
+        box-shadow: rem-calc(0 7px 23px) rgba(0, 0, 0, 0.05);
+        box-sizing: border-box;
+        padding: rem-calc(11px);
+        background: $white;
+
+        &-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: rem-calc(10px);
+        }
+
+        &-item {
+            display: flex;
+            margin-bottom: rem-calc(10px);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &-series,
+        &-date,
+        &-time {
+            font-family: Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: rem-calc(12px);
+        }
+
+        &-date,
+        &-cost {
+            color: $dark-grey;
+        }
+
+        &-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: rem-calc(12px);
+            height: rem-calc(12px);
+            border-radius: 50%;
+            background: $teal;
+            border: rem-calc(1px) solid $white;
+            box-sizing: border-box;
+            box-shadow: rem-calc(0 2px 4px) rgba(0, 0, 0, 0.2);
+            margin-right: rem-calc(3px);
+
+            &--green {
+                background: $teal;
+            }
+
+            &--black {
+                background: $black;
+            }
+
+            &--change {
+                &--green {
+                    background: $teal;
+                }
+
+                &--black {
+                    background: $black;
+                }
+
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    width: rem-calc(3px);
+                    height: rem-calc(3px);
+                    border-top: rem-calc(0.2px) solid $light-grey;
+                    border-right: rem-calc(0.2px) solid $light-grey;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+
+        &-time,
+        &-series {
+            color: $mediumlight-grey;
+        }
+    }
+}

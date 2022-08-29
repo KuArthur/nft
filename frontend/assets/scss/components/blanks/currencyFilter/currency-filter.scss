@@ -1,0 +1,51 @@
+.currency-filter {
+    display: flex;
+    justify-content: space-between;
+    width: rem-calc(115px);
+    height: rem-calc(48px);
+    box-shadow: rem-calc(0 3.5px 5.5px) rgba(0, 0, 0, 0.02);
+    border-radius: rem-calc(12px);
+    background: $medium-grey;
+    box-sizing: border-box;
+    padding: rem-calc(4px);
+
+    &__label {
+        cursor: pointer;
+        position: relative;
+        width: rem-calc(50px);
+        height: rem-calc(40px);
+
+        /*stylelint-disable*/
+        &:hover {
+            .currency-filter__filter {
+                background: rgba(125, 139, 163, 0.1);
+                z-index: 2;
+            }
+        }
+    }
+
+    &__filter {
+        width: rem-calc(50px);
+        height: rem-calc(40px);
+        border-radius: rem-calc(12px);
+        -webkit-appearance: none;
+        background: $medium-grey;
+
+        &:checked {
+            background: $white !important;
+        }
+    }
+
+    &__text {
+        position: absolute;
+        left: 0;
+        bottom: rem-calc(13px);
+        width: rem-calc(50px);
+        font-size: rem-calc(17px);
+        font-weight: 700;
+        color: $extra-medium-grey;
+        z-index: 2;
+        text-align: center;
+        line-height: rem-calc(13px);
+    }
+}

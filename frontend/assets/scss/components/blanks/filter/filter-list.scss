@@ -1,0 +1,16 @@
+.filter-list {
+    &__title {
+        font-weight: 700;
+        font-size: rem-calc(12px);
+        line-height: 150%;
+        color: $extra-medium-grey;
+        margin-bottom: rem-calc(12px);
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, rem-calc(270px));
+        column-gap: rem-calc(8px);
+        row-gap: rem-calc(19px);
+    }
+}

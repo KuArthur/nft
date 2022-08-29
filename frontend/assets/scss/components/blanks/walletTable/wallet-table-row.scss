@@ -1,0 +1,146 @@
+.wallet-table {
+    &__link {
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+
+        &--collection {
+            display: flex;
+        }
+
+        &-opensea {
+            text-decoration: none;
+            width: rem-calc(20px);
+            height: rem-calc(20px);
+        }
+
+        &-graph {
+            text-decoration: none;
+            color: $black;
+        }
+    }
+
+    &__item {
+        border-bottom: rem-calc(1px) solid $light-grey;
+        color: $black;
+        font-size: rem-calc(16px);
+        font-weight: 700;
+        line-height: 1.37;
+        text-align: left;
+        padding: rem-calc(24px 0);
+        padding-bottom: rem-calc(17px);
+
+        &--collection {
+            padding-top: rem-calc(9px);
+            padding-bottom: 0;
+            line-height: 1;
+        }
+
+        &--volume,
+        &--floor {
+            line-height: 1.3125;
+
+            // line-height: 1.15;
+            // padding-top: rem-calc(3px);
+            // line-height: 1;
+        }
+
+        &--up,
+        &--down {
+            line-height: 1.3125;
+
+            // line-height: 1;
+        }
+
+        &--up {
+            color: $green;
+        }
+
+        &--down {
+            color: $red;
+        }
+    }
+
+    &__collection {
+        cursor: pointer;
+
+        &-name {
+            position: relative;
+            text-decoration: none;
+            color: $dark-grey;
+            display: inline-block;
+            padding-top: rem-calc(17px);
+            width: rem-calc(208px);
+            // width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &-img {
+            border-radius: 50%;
+            margin-right: rem-calc(16px);
+            width: rem-calc(45px);
+            height: rem-calc(45px);
+            border: rem-calc(1px) solid $light-grey;
+            box-sizing: border-box;
+            float: left;
+        }
+    }
+
+    &__icon {
+        &--star {
+            align-items: center;
+            padding-left: rem-calc(7px);
+            cursor: pointer;
+            font-size: rem-calc(20px);
+            color: $grey;
+        }
+
+        &--graph {
+            align-items: center;
+            cursor: pointer;
+            font-size: rem-calc(20px);
+            margin-left: rem-calc(19px);
+        }
+
+        &--ethereum {
+            height: auto;
+            vertical-align: sub;
+            font-size: rem-calc(20px);
+        }
+
+        &--opensea {
+            display: inline-block;
+            cursor: pointer;
+            width: rem-calc(20px);
+            height: rem-calc(20px);
+            font-size: rem-calc(20px);
+            color: #2081e2;
+        }
+
+        &--up,
+        &--down {
+            // display: inline-block;
+            margin-top: rem-calc(-2px);
+            vertical-align: sub;
+            font-size: rem-calc(20px);
+        }
+
+        &--up {
+            color: $green;
+        }
+
+        &--down {
+            color: $red;
+        }
+
+        &--disable {
+            display: none;
+        }
+    }
+}
+
+tbody {
+    vertical-align: top;
+}

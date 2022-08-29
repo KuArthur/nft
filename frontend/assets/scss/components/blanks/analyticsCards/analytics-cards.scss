@@ -1,0 +1,6 @@
+.analytics-cards {
+    display: grid;
+    grid-template-columns: repeat(4, rem-calc(382px));
+    grid-column-gap: rem-calc(104px);
+    margin: rem-calc(33px 0);
+}

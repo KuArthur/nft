@@ -1,0 +1,48 @@
+@function convert-to-em($value, $base-value: $base-font-size) {
+    $value: strip-unit($value) / strip-unit($base-value) * 1em;
+
+    @if ($value==0em) {
+        $value: 0;
+    }
+
+    // Turn 0em into 0
+    @return $value;
+}
+
+@function em-calc($values, $base-value: $base-font-size) {
+    $max: length($values);
+
+    @if $max==1 {
+        @return convert-to-em(nth($values, 1), $base-value);
+    }
+
+    $emValues: ();
+
+    @for $i from 1 through $max {
+        $emValues: append($emValues, convert-to-em(nth($values, $i), $base-value));
+    }
+
+    @return $emValues;
+}
+
+// Данная функция просчитывает размер шрифта в vw исходя
+// из размера макетов ($design-size) и базового font-size для
+// пропорционального масштабирования страницы.
+//
+// Пример: мы имеем базовый размер шрифта 16px и делим его на 1% от
+// размера макета (320px), получаем 5vw и верстку которая будет выглядеть
+// одинаково на всех размерах экрана.
+//
+// (16 / (320 / 100))+vw = 5vw
+
+@function scalable-font-size-calc($design-size, $base-value: $base-font-size) {
+    @return (strip-unit($base-value) / (strip-unit($design-size) / 100))+vw;
+}
+
+// Данная функция просчитывает размер шрифта в px исходя
+// из размера макетов ($design-size), $breakpoint и базового font-size для
+// корректного отображения верстки в соответствии с макетами.
+
+@function not-scalable-font-size-calc($breakpoint, $design-size, $base-value: $base-font-size) {
+    @return ((strip-unit($breakpoint) / 100) * (strip-unit($base-font-size) / (strip-unit($design-size) / 100)))+px;
+}

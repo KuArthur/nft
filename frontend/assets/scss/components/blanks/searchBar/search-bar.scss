@@ -1,0 +1,178 @@
+.search-bar {
+    &--active {
+        position: absolute;
+        width: rem-calc(402px);
+        height: rem-calc(518px);
+        background: $white;
+        transition: ease-out 0.2s;
+        box-shadow: rem-calc(0 7px 23px) rgba(0, 0, 0, 0.05);
+        border-radius: rem-calc(5px);
+        z-index: 5;
+        left: rem-calc(-29px);
+        top: rem-calc(-16px);
+    }
+
+    &__field {
+        cursor: pointer;
+        position: relative;
+        width: rem-calc(237px);
+
+        &--active {
+            display: flex;
+            align-items: center;
+            cursor: text;
+            width: rem-calc(339px);
+            margin-top: rem-calc(16px);
+            margin-left: rem-calc(22px);
+        }
+    }
+
+    &__input {
+        position: absolute;
+        left: 0;
+        cursor: inherit;
+        width: 100%;
+        height: rem-calc(48px);
+        box-sizing: border-box;
+        border-radius: rem-calc(15px);
+        border: rem-calc(0.5px) solid $grey;
+        padding: rem-calc(15px 37px);
+        padding-right: rem-calc(15px);
+        font-size: rem-calc(14px);
+        line-height: rem-calc(21px);
+        font-weight: 400;
+        flex-shrink: 0;
+
+        &--focus {
+            z-index: 10;
+        }
+
+        &::placeholder {
+            color: $grey;
+            font-weight: 200;
+        }
+    }
+
+    &__icon {
+        &--search {
+            position: absolute;
+            z-index: 1;
+            top: rem-calc(16px);
+            left: rem-calc(11px);
+
+            &--focus {
+                z-index: 11;
+            }
+        }
+
+        &--close {
+            cursor: pointer;
+            font-size: rem-calc(18px);
+            margin-left: rem-calc(9px);
+            line-height: 0;
+            color: $grey;
+        }
+    }
+
+    &__list {
+        list-style-type: none;
+        height: rem-calc(411px);
+        overflow-y: scroll;
+        border-right: rem-calc(17px) solid $white;
+        box-sizing: border-box;
+        padding-left: rem-calc(18px);
+        // padding-top: rem-calc(33px);
+        padding-top: rem-calc(33px);
+        padding-right: rem-calc(18px);
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+            width: rem-calc(14px);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            // background: rgba(160, 174, 192, 0.5);
+            // border-radius: rem-calc(20px);
+            // width: rem-calc(20px);
+            border: rem-calc(4px) solid transparent;
+            border-radius: rem-calc(20px);
+            background-color: rgba(160, 174, 192, 0.5);
+            background-clip: content-box;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: rgba(160, 174, 192, 0.1);
+        }
+    }
+
+    &__collection {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: rem-calc(20px);
+        position: relative;
+        // height: rem-calc(41px);
+
+        &-wrapper {
+            display: flex;
+            align-items: center;
+            padding-left: rem-calc(9px);
+        }
+
+        &-img {
+            width: rem-calc(20px);
+            height: rem-calc(20px);
+            border: rem-calc(1px) solid $light-grey;
+            box-sizing: border-box;
+            border-radius: 50%;
+            margin-right: rem-calc(7px);
+        }
+
+        &-name {
+            font-size: rem-calc(16px);
+            color: $dark-grey;
+            font-weight: 700;
+            padding-top: rem-calc(2px);
+        }
+
+        &-rating {
+            font-size: rem-calc(12px);
+            color: $grey;
+            padding-top: rem-calc(2px);
+        }
+
+        &--focus {
+            position: relative;
+
+            .search-bar__collection-rating {
+                display: none;
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                background: rgba(160, 174, 192, 0.1);
+                border-radius: rem-calc(10px);
+                width: rem-calc(352px);
+                height: rem-calc(41px);
+                z-index: -1;
+            }
+
+            &::after {
+                content: 'Select';
+                position: absolute;
+                font-size: rem-calc(12px);
+                line-height: rem-calc(15px);
+                background: url(/images/icons/select.svg) no-repeat center;
+                background-size: contain;
+                width: rem-calc(22px);
+                height: rem-calc(15px);
+                right: rem-calc(-48px);
+                padding-right: rem-calc(83px);
+                top: rem-calc(3px);
+                color: $grey;
+            }
+        }
+    }
+}

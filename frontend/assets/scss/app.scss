@@ -1,0 +1,17 @@
+@import 'utility/normalize';
+@import 'utility/transitions';
+@import 'utility/fonts';
+@import 'utility/foundation';
+@import 'utility/icons';
+@import 'components/ui/state';
+
+html {
+    @include resizable-logic;
+}
+
+body {
+    @include foundation-visibility-classes;
+
+    font-family: $body-font-family;
+    background: #f8f9fa;
+}
